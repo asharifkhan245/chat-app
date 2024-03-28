@@ -350,4 +350,18 @@ class AdminController extends Controller
 
         return response()->json(['success' => $success], $success['status']);
     }
+
+
+
+
+    public function getCards(Request $request){
+
+        $paymentDetails =  PaymentDetails::where('user_id', $request->user_id)->get();
+
+        $success['status'] = 200;
+        $success['message'] = 'Card information added successfully.';
+        $success['data'] = $paymentDetails;
+
+        return response()->json(['success' => $success], $success['status']);
+    }
 }
