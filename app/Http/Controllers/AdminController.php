@@ -368,7 +368,18 @@ class AdminController extends Controller
 
 
     public function deleteCard(Request $request){
-            
+     
+        
+
+
+        $paymentDetails =  PaymentDetails::where('id', $request->id)->delete();
+
+
+        $success['status'] = 200;
+        $success['message'] = 'Card information deleted successfully.';
+        $success['data'] = $paymentDetails;
+
+        return response()->json(['success' => $success], $success['status']);
     }
 
 
