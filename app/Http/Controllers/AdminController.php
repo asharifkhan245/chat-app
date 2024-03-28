@@ -364,4 +364,15 @@ class AdminController extends Controller
 
         return response()->json(['success' => $success], $success['status']);
     }
+
+
+
+    public function deleteCard(Request $request){
+            
+    }
+
+
+
+
+
 }
